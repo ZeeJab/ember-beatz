@@ -1,6 +1,7 @@
-import Ember from 'ember';
+import Service from 'ember-service';
+import computed from 'ember-computed';
 
-export default Ember.Service.extend({
+export default Service.extend({
   init() {
     let howl = new Howl({
       src: ['sprite.mp3'],
@@ -27,7 +28,7 @@ export default Ember.Service.extend({
     this.set('howl', howl);
   },
 
-  sounds: Ember.computed('howl', function() {
+  sounds: computed('howl', function() {
     let howl = this.get('howl');
     return Object.keys(howl._sprite);
   }),
