@@ -1,3 +1,5 @@
-<h2 id="title">Welcome to Ember</h2>
+<h2 id="title">Zahra Beats</h2>
 
-{{outlet}}
+{{#each audioService.sounds as |sound|}}
+  <button onmouseover={{action 'play' sound}}>Play {{sound}}</button>
+{{/each}}
